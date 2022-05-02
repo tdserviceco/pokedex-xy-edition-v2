@@ -1,0 +1,7 @@
+.bottom {
+  background-color: #000c00;
+  color: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}

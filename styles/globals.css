@@ -1,0 +1,254 @@
+/***
+    The new CSS reset - version 1.5.1 (last updated 1.3.2022)
+    GitHub page: https://github.com/elad2412/the-new-css-reset
+***/
+
+/*
+    Remove all the styles of the "User-Agent-Stylesheet", except for the 'display' property
+    - The "symbol *" part is to solve Firefox SVG sprite bug
+ */
+*:where(:not(iframe, canvas, img, svg, video):not(svg *, symbol *)) {
+  all: unset;
+  display: revert;
+}
+
+/* Preferred box-sizing value */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/* Reapply the pointer cursor for anchor tags */
+a, button {
+  cursor: revert;
+}
+
+/* Remove list styles (bullets/numbers) */
+ol, ul, menu {
+  list-style: none;
+}
+
+/* For images to not be able to exceed their container */
+img {
+  max-width: 100%;
+}
+
+/* removes spacing between cells in tables */
+table {
+  border-collapse: collapse;
+}
+
+/* revert the 'white-space' property for textarea elements on Safari */
+textarea {
+  white-space: revert;
+}
+
+/* minimum style to allow to style meter element */
+meter {
+  -webkit-appearance: revert;
+  appearance: revert;
+}
+
+/* reset default text opacity of input placeholder */
+::placeholder {
+  color: unset;
+}
+
+/* fix the feature of 'hidden' attribute.
+   display:revert; revert to element instead of attribute */
+:where([hidden]) {
+  display: none;
+}
+
+/* revert for bug in Chromium browsers
+   - fix for the content editable attribute will work properly. */
+:where([contenteditable]) {
+  -moz-user-modify: read-write;
+  -webkit-user-modify: read-write;
+  overflow-wrap: break-word;
+  -webkit-line-break: after-white-space;
+}
+
+/* apply back the draggable feature - exist only in Chromium and Safari */
+:where([draggable="true"]) {
+  -webkit-user-drag: element;
+}
+
+:root {
+  /* Font-size */
+  --h1: 2rem;
+  --h2: 1.5rem;
+  --h3: 1.25rem;
+  --h4: 1rem;
+
+  /** colours */
+  --normal: #A8A878;
+  --fighting: #C03028;
+  --fire: #F08030;
+  --water: #6890F0;
+  --flying: #A890F0;
+  --grass: #78C850;
+  --poison: #A040A0;
+  --electric: #F8D030;
+  --ground: #E0C068;
+  --psychic: #F85888;
+  --rock: #B8A038;
+  --ice: #98D8D8;
+  --bug: #A8B820;
+  --dragon: #7038F8;
+  --ghost: #705898;
+  --dark: #705848;
+  --steel: #B8B8D0;
+  --fairy: #EE99AC;
+}
+
+
+html, body, #__next {
+  width: 100%;
+  height: 100%;
+}
+
+
+h1,
+h2,
+h3 {
+  text-transform: uppercase;
+  letter-spacing: 0.0625rem;
+  line-height: 1.2;
+  font-weight: 600;
+  word-break: break-word;
+}
+
+p {
+  line-height: 2rem;
+}
+
+h1 {
+  font-size: var(--h1);
+}
+
+h2 {
+  font-size: var(--h2);
+}
+
+h3 {
+  font-size: var(--h3);
+}
+
+h4,
+p,
+a,
+label>span {
+  font-size: var(--h4);
+  word-break: break-word;
+}
+
+.container {
+  display: flex;
+  padding: 1rem;
+  min-height: calc(100vh - 2rem);
+}
+
+.skills {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.skills>* {
+  border-radius: 0.313rem;
+  padding: 1rem;
+  color: #fff;
+  text-transform: capitalize;
+}
+
+.normal {
+  background-color: var(--normal);
+}
+
+.fighting {
+  background-color: var(--fighting);
+}
+
+.fire {
+  background-color: var(--fire);
+}
+
+.water {
+  background-color: var(--water);
+}
+
+.flying {
+  background-color: var(--flying);
+}
+
+.grass {
+  background-color: var(--grass);
+}
+
+.poison {
+  background-color: var(--poison);
+}
+
+.electric {
+  background-color: var(--electric);
+}
+
+.ground {
+  background-color: var(--ground);
+}
+
+.psychic {
+  background-color: var(--psychic);
+}
+
+.rock {
+  background-color: var(--rock);
+}
+
+.ice {
+  background-color: var(--ice);
+}
+
+.bug {
+  background-color: var(--bug);
+}
+
+.dragon {
+  background-color: var(--dragon);
+}
+
+.ghost {
+  background-color: var(--ghost);
+}
+
+.dark {
+  background-color: var(--dark);
+}
+
+.steel {
+  background-color: var(--steel);
+}
+
+.fairy {
+  background-color: var(--fairy);
+}
+
+@media (orientation:portrait) {
+  .container {
+    flex-direction: column;
+  }
+}
+
+@media (orientation:landscape) {
+  .container {
+    flex-direction: column;
+  }
+}
+
+@media (min-width: 1024px) {
+  .container {
+    max-width: 1024px;
+    margin: 0 auto;
+  }
+}
