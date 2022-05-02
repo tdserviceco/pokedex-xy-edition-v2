@@ -1,6 +1,6 @@
 // components/layout.js
 
-import Bottom from './bottom';
+import Bottom from './Bottom';
 import Head from 'next/head';
 export default function Layout({ title, children }) {
   return (
