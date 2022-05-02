@@ -9,7 +9,16 @@ export default function Home({ pokemon }) {
           <Link href={`/pokemon/${pokeman.name}`}>
             <a className={styles.content}>
               <div className={styles.pokemonImage}>
-                <Image quality={100} objectFit={'cover'} src={pokeman.image} alt={pokeman.name} width={1000} height={1000} layout={'responsive'} />
+                <Image
+                  quality={100}
+                  objectFit={'cover'}
+                  objectPosition={'top left'}
+                  src={pokeman.image}
+                  alt={pokeman.name}
+                  layout={'responsive'}
+                  width={240}
+                  height={240}
+                />
               </div>
             </a>
           </Link>

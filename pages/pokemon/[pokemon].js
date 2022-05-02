@@ -12,7 +12,6 @@ export default function Pokemon({ pokeman }) {
     let metric = convert / 10;
     let imperial;
     if (type === 'height') {
-      console.log(metric)
       imperial = Math.round(metric * 39.3700787);
     }
     else {
@@ -41,12 +40,11 @@ export default function Pokemon({ pokeman }) {
       <div className={styles.image}>
         <Image
           quality={100}
-          objectFit={'cover'}
+          objectFit={'contain'}
+          objectPosition={"50% 50%"}
           src={pokeman.image}
           alt={pokeman.name}
-          layout={'responsive'}
-          width={1000}
-          height={1000}
+          layout={'fill'}
           priority />
       </div>
       <div className={styles.pokemonContent}>
